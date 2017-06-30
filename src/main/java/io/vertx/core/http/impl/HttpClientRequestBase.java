@@ -135,7 +135,7 @@ abstract class HttpClientRequestBase implements HttpClientRequest {
       if (exceptionHandler != null) {
         exceptionHandler.handle(t);
       } else {
-        log.error(t);
+        log.error("No handler for exception", t);
       }
     }
   }

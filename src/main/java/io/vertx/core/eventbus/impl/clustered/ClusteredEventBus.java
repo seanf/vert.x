@@ -158,7 +158,7 @@ public class ClusteredEventBus extends EventBusImpl {
             if (resultHandler != null) {
               resultHandler.handle(Future.failedFuture(asyncResult.cause()));
             } else {
-              log.error(asyncResult.cause());
+              log.error("No handler for exception", asyncResult.cause());
             }
           }
         });
@@ -166,7 +166,7 @@ public class ClusteredEventBus extends EventBusImpl {
         if (resultHandler != null) {
           resultHandler.handle(Future.failedFuture(ar2.cause()));
         } else {
-          log.error(ar2.cause());
+          log.error("No handler for exception", ar2.cause());
         }
       }
     });

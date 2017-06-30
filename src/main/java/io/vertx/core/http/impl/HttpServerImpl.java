@@ -298,7 +298,7 @@ public class HttpServerImpl implements HttpServer, Closeable, MetricsProvider {
             vertx.runOnContext(v -> listenHandler.handle(Future.failedFuture(t)));
           } else {
             // No handler - log so user can see failure
-            log.error(t);
+            log.error("No handler for exception", t);
           }
           listening = false;
           return this;
@@ -325,7 +325,7 @@ public class HttpServerImpl implements HttpServer, Closeable, MetricsProvider {
         } else if (future.failed()) {
           listening  = false;
           // No handler - log so user can see failure
-          log.error(future.cause());
+          log.error("No handler for exception", future.cause());
         }
       });
     }

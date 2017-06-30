@@ -346,7 +346,7 @@ public class Starter {
           VertxException ve = (VertxException)cause;
           log.error(ve.getMessage());
           if (ve.getCause() != null) {
-            log.error(ve.getCause());
+            log.error("Exception cause", ve.getCause());
           }
         } else {
           log.error("Failed in " + message, cause);

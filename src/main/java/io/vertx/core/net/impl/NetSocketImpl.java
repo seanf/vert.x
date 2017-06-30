@@ -277,7 +277,7 @@ public class NetSocketImpl extends ConnectionBase implements NetSocket {
       if (future.isSuccess()) {
         handler.handle(null);
       } else {
-        log.error(future.cause());
+        log.error("Exception", future.cause());
       }
     }));
     return this;
